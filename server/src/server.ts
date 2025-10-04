@@ -13,6 +13,7 @@ import { errorHandler } from './utils/error';
 import { createCorsOptions } from './utils/cors';
 import { assetsRouter } from './routes/assets';
 import { ensureSeed } from './seed';
+import { previewRouter } from './routes/preview';
 
 export const prisma = new PrismaClient();
 const logger = pino({ level: process.env.LOG_LEVEL || 'info' });
@@ -50,6 +51,7 @@ export async function createServer() {
   app.use('/api/auth', authRouter);
   app.use('/api', publicRouter);
   app.use('/api/admin', adminRouter);
+  app.use('/api/preview', previewRouter);
   app.use('/', feedRouter);
   app.use('/uploads', assetsRouter);
 

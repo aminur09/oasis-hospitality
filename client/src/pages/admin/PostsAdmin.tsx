@@ -16,7 +16,7 @@ type PostForm = {
 export function PostsAdmin() {
   const qc = useQueryClient();
   const { data } = useQuery({ queryKey: ['admin-posts'], queryFn: async () => (await api.get('/admin/posts')).data });
-  const { register, handleSubmit, setValue } = useForm<PostForm>();
+  const { register, handleSubmit, setValue, getValues } = useForm<PostForm>();
   const createMutation = useMutation({
     mutationFn: async (values: PostForm) => (await api.post('/admin/posts', values)).data,
     onSuccess: () => qc.invalidateQueries({ queryKey: ['admin-posts'] })
@@ -24,6 +24,17 @@ export function PostsAdmin() {
 
   function onSubmit(values: PostForm) {
     createMutation.mutate(values);
+  }
+
+  async function preview() {
+    const slug = getValues('slug');
+    if (!slug) return alert('Please provide a slug to preview.');
+    try {
+      const { data } = await api.get(`/admin/preview-token?type=post&slug=${encodeURIComponent(slug)}`);
+      window.open(data.previewUrl, '_blank');
+    } catch {
+      alert('Unable to generate preview link.');
+    }
   }
 
   return (
@@ -47,7 +58,10 @@ export function PostsAdmin() {
           <h3 className="font-semibold">Create Post</h3>
           <form className="mt-2 space-y-3" onSubmit={handleSubmit(onSubmit)}>
             <input className="w-full px-3 py-2 rounded border" placeholder="Title" {...register('title')} onChange={(e) => setValue('slug', slugify(e.target.value))} />
-            <input className="w-full px-3 py-2 rounded border" placeholder="Slug" {...register('slug')} />
+            <div className="flex gap-2">
+              <input className="w-full px-3 py-2 rounded border" placeholder="Slug" {...register('slug')} />
+              <button type="button" className="px-3 py-2 rounded bg-secondary text-dark" onClick={preview}>Preview</button>
+            </div>
             <select className="w-full px-3 py-2 rounded border" {...register('category')}>
               <option value="NEWS">News</option>
               <option value="INSIGHTS">Insights</option>

@@ -1,11 +1,24 @@
 import { useQuery } from '@tanstack/react-query';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useSearchParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { api } from '../lib/api';
 
 export function ProjectDetailPage() {
   const { slug } = useParams();
-  const { data } = useQuery({ queryKey: ['project', slug], queryFn: async () => (await api.get(`/projects/${slug}`)).data });
+  const [params] = useSearchParams();
+  const preview = params.get('preview');
+
+  const { data } = useQuery({
+    queryKey: ['project', slug, preview],
+    queryFn: async () => {
+      if (preview) {
+        const resp = await api.get(`/preview?type=project&slug=${slug}&token=${encodeURIComponent(preview)}`);
+        return resp.data;
+      }
+      const resp = await api.get(`/projects/${slug}`);
+      return resp.data;
+    }
+  });
 
   if (!data) return <div className="mx-auto max-w-6xl px-4 py-8">Loading...</div>;
 

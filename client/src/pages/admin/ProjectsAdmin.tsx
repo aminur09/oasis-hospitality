@@ -18,7 +18,7 @@ type ProjectForm = {
 export function ProjectsAdmin() {
   const qc = useQueryClient();
   const { data } = useQuery({ queryKey: ['admin-projects'], queryFn: async () => (await api.get('/admin/projects')).data });
-  const { register, handleSubmit, setValue } = useForm<ProjectForm>();
+  const { register, handleSubmit, setValue, getValues } = useForm<ProjectForm>();
   const createMutation = useMutation({
     mutationFn: async (values: ProjectForm) => (await api.post('/admin/projects', values)).data,
     onSuccess: () => qc.invalidateQueries({ queryKey: ['admin-projects'] })
@@ -26,6 +26,17 @@ export function ProjectsAdmin() {
 
   function onSubmit(values: ProjectForm) {
     createMutation.mutate(values);
+  }
+
+  async function preview() {
+    const slug = getValues('slug');
+    if (!slug) return alert('Please provide a slug to preview.');
+    try {
+      const { data } = await api.get(`/admin/preview-token?type=project&slug=${encodeURIComponent(slug)}`);
+      window.open(data.previewUrl, '_blank');
+    } catch {
+      alert('Unable to generate preview link.');
+    }
   }
 
   return (
@@ -49,7 +60,10 @@ export function ProjectsAdmin() {
           <h3 className="font-semibold">Create Project</h3>
           <form className="mt-2 space-y-3" onSubmit={handleSubmit(onSubmit)}>
             <input className="w-full px-3 py-2 rounded border" placeholder="Title" {...register('title')} onChange={(e) => setValue('slug', slugify(e.target.value))} />
-            <input className="w-full px-3 py-2 rounded border" placeholder="Slug" {...register('slug')} />
+            <div className="flex gap-2">
+              <input className="w-full px-3 py-2 rounded border" placeholder="Slug" {...register('slug')} />
+              <button type="button" className="px-3 py-2 rounded bg-secondary text-dark" onClick={preview}>Preview</button>
+            </div>
             <select className="w-full px-3 py-2 rounded border" {...register('status')}>
               <option value="DRAFT">Draft</option>
               <option value="PUBLISHED">Published</option>

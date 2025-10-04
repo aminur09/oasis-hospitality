@@ -3,6 +3,7 @@ import { prisma } from '../server';
 import { requireAuth, requireRole } from '../middlewares/auth';
 import { ApiError } from '../utils/error';
 import { postCreateSchema, projectCreateSchema, careerCreateSchema, settingsUpdateSchema } from '../validation/schemas';
+import { signPreview } from '../utils/auth';
 
 export const adminRouter = Router();
 
@@ -186,6 +187,37 @@ adminRouter.put('/settings', adminOnly, async (req, res, next) => {
     const userId = (req as any).user.sub as string;
     await prisma.auditLog.create({ data: { entity: 'Settings', entityId: String(updated.id), action: 'update', userId } });
     res.json(updated);
+  } catch (e) {
+    next(e);
+  }
+});
+
+/**
+ * Preview token issuance
+ */
+adminRouter.get('/preview-token', canEdit, async (req, res, next) => {
+  try {
+    const type = (req.query.type as string) || '';
+    const slug = (req.query.slug as string) || '';
+    if (!['post', 'project', 'career'].includes(type) || !slug) throw new ApiError(400, 'Invalid preview request');
+
+    // Ensure entity exists
+    const exists =
+      type === 'post'
+        ? await prisma.post.findUnique({ where: { slug } })
+        : type === 'project'
+        ? await prisma.project.findUnique({ where: { slug } })
+        : await prisma.career.findUnique({ where: { slug } });
+
+    if (!exists) throw new ApiError(404, 'Entity not found');
+
+    const userId = (req as any).user.sub as string;
+    const token = signPreview({ type: type as any, slug, sub: userId });
+    const base = process.env.PUBLIC_BASE_URL || 'http://localhost';
+    const path =
+      type === 'post' ? `/news/${slug}` : type === 'project' ? `/projects/${slug}` : `/careers/${slug}`;
+
+    res.json({ token, previewUrl: `${base}${path}?preview=${encodeURIComponent(token)}` });
   } catch (e) {
     next(e);
   }
