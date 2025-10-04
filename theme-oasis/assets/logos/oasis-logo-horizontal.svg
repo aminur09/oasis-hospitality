@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="240" height="48" viewBox="0 0 240 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
+  <title>Oasis Hospitality — Horizontal Logo</title>
+  <defs>
+    <linearGradient id="wave" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0E6E6E"/>
+      <stop offset="100%" stop-color="#4C63FF"/>
+    </linearGradient>
+  </defs>
+  <!-- Mark -->
+  <g transform="translate(8,8)">
+    <path d="M0 20 C 12 6, 24 6, 36 20 C 24 34, 12 34, 0 20 Z" fill="url(#wave)" />
+    <circle cx="18" cy="20" r="6" fill="#C19A6B"/>
+  </g>
+  <!-- Wordmark -->
+  <g fill="#0B1B1E" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif">
+    <text x="56" y="22" font-size="16" font-weight="700">Oasis</text>
+    <text x="56" y="40" font-size="14" font-weight="500" fill="#0E6E6E">Hospitality</text>
+  </g>
+</svg>

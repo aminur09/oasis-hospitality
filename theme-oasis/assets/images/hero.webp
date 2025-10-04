@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Using SVG as a lightweight placeholder for hero background -->
+<svg width="1600" height="600" viewBox="0 0 1600 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title>Oasis Hospitality — Hero Placeholder</title>
+  <desc>A subtle teal gradient with wave accent used as a hero background placeholder.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0E6E6E"/>
+      <stop offset="100%" stop-color="#0B1B1E"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="600" fill="url(#bg)"/>
+  <path d="M0 420 C 400 360, 800 480, 1600 420 L1600 600 L0 600 Z" fill="#C19A6B" opacity="0.35"/>
+  <path d="M0 460 C 400 420, 800 540, 1600 480 L1600 600 L0 600 Z" fill="#4C63FF" opacity="0.25"/>
+</svg>

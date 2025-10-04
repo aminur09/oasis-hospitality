@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- WordPress WXR Export -->
+<rss version="2.0"
+	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:wp="http://wordpress.org/export/1.2/"
+>
+<channel>
+	<title>Oasis Hospitality</title>
+	<link>https://oasishospitality.net/</link>
+	<description>Import content for Oasis Hospitality</description>
+	<pubDate>Sat, 01 Jan 2025 00:00:00 +0000</pubDate>
+	<language>en</language>
+	<wp:wxr_version>1.2</wp:wxr_version>
+	<wp:base_site_url>https://example.com</wp:base_site_url>
+	<wp:base_blog_url>https://example.com</wp:base_blog_url>
+
+	<wp:author>
+		<wp:author_id>1</wp:author_id>
+		<wp:author_login>admin</wp:author_login>
+		<wp:author_email>info@oasishospitality.net</wp:author_email>
+		<wp:author_display_name><![CDATA[Oasis Admin]]></wp:author_display_name>
+		<wp:author_first_name><![CDATA[Oasis]]></wp:author_first_name>
+		<wp:author_last_name><![CDATA[Admin]]></wp:author_last_name>
+	</wp:author>
+
+	<!-- Categories -->
+	<wp:category>
+		<wp:category_nicename>news</wp:category_nicename>
+		<wp:cat_name><![CDATA[News]]></wp:cat_name>
+	</wp:category>
+	<wp:category>
+		<wp:category_nicename>insights</wp:category_nicename>
+		<wp:cat_name><![CDATA[Insights]]></wp:cat_name>
+	</wp:category>
+	<wp:category>
+		<wp:category_nicename>press</wp:category_nicename>
+		<wp:cat_name><![CDATA[Press]]></wp:cat_name>
+	</wp:category>
+	<wp:category>
+		<wp:category_nicename>careers</wp:category_nicename>
+		<wp:cat_name><![CDATA[Careers]]></wp:cat_name>
+	</wp:category>
+
+	<!-- Tags -->
+	<wp:tag><wp:tag_slug>revenue-management</wp:tag_slug><wp:tag_name><![CDATA[Revenue Management]]></wp:tag_name></wp:tag>
+	<wp:tag><wp:tag_slug>operations</wp:tag_slug><wp:tag_name><![CDATA[Operations]]></wp:tag_name></wp:tag>
+	<wp:tag><wp:tag_slug>development</wp:tag_slug><wp:tag_name><![CDATA[Development]]></wp:tag_name></wp:tag>
+	<wp:tag><wp:tag_slug>brand-standards</wp:tag_slug><wp:tag_name><![CDATA[Brand Standards]]></wp:tag_name></wp:tag>
+
+	<!-- Custom Taxonomy: Project Type -->
+	<wp:term><wp:term_taxonomy>project_type</wp:term_taxonomy><wp:term_slug>new-build</wp:term_slug><wp:term_name><![CDATA[New Build]]></wp:term_name></wp:term>
+	<wp:term><wp:term_taxonomy>project_type</wp:term_taxonomy><wp:term_slug>renovation</wp:term_slug><wp:term_name><![CDATA[Renovation]]></wp:term_name></wp:term>
+	<wp:term><wp:term_taxonomy>project_type</wp:term_taxonomy><wp:term_slug>brand-conversion</wp:term_slug><wp:term_name><![CDATA[Brand Conversion]]></wp:term_name></wp:term>
+	<wp:term><wp:term_taxonomy>project_type</wp:term_taxonomy><wp:term_slug>management-only</wp:term_slug><wp:term_name><![CDATA[Management Only]]></wp:term_name></wp:term>
+
+	<!-- Blog Posts -->
+	<item>
+		<title>Driving RevPAR with Smarter Mix Management</title>
+		<link>https://example.com/?p=1</link>
+		<pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://example.com/?p=1</guid>
+		<description></description>
+		<content:encoded><![CDATA[<p>Oasis Hospitality focuses on optimized guest mix, rate strategy, and channel discipline to drive RevPAR across markets.</p>]]></content:encoded>
+		<wp:post_id>1</wp:post_id>
+		<wp:post_date>2024-01-01 00:00:00</wp:post_date>
+		<wp:post_type>post</wp:post_type>
+		<wp:status>publish</wp:status>
+		<category domain="category" nicename="insights"><![CDATA[Insights]]></category>
+		<category domain="post_tag" nicename="revenue-management"><![CDATA[Revenue Management]]></category>
+		<category domain="post_tag" nicename="operations"><![CDATA[Operations]]></category>
+	</item>
+
+	<item>
+		<title>Oasis Selected to Operate the Midtown Suites</title>
+		<link>https://example.com/?p=2</link>
+		<pubDate>Tue, 15 Feb 2024 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://example.com/?p=2</guid>
+		<content:encoded><![CDATA[<p>Oasis Hospitality has been selected to operate the Midtown Suites, expanding our footprint and delivering operational excellence.</p>]]></content:encoded>
+		<wp:post_id>2</wp:post_id>
+		<wp:post_date>2024-02-15 00:00:00</wp:post_date>
+		<wp:post_type>post</wp:post_type>
+		<wp:status>publish</wp:status>
+		<category domain="category" nicename="news"><![CDATA[News]]></category>
+		<category domain="post_tag" nicename="operations"><![CDATA[Operations]]></category>
+	</item>
+
+	<item>
+		<title>Brand Conversion: From Economy to Upper-Midscale in 120 Days</title>
+		<link>https://example.com/?p=3</link>
+		<pubDate>Fri, 10 Mar 2024 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://example.com/?p=3</guid>
+		<content:encoded><![CDATA[<p>Our conversion playbook delivers speed and consistency: scope, permits, procurement, training, and opening—all in 120 days.</p>]]></content:encoded>
+		<wp:post_id>3</wp:post_id>
+		<wp:post_date>2024-03-10 00:00:00</wp:post_date>
+		<wp:post_type>post</wp:post_type>
+		<wp:status>publish</wp:status>
+		<category domain="category" nicename="insights"><![CDATA[Insights]]></category>
+		<category domain="post_tag" nicename="brand-standards"><![CDATA[Brand Standards]]></category>
+		<category domain="post_tag" nicename="development"><![CDATA[Development]]></category>
+	</item>
+
+	<item>
+		<title>Press: Oasis Hospitality Expands Across the Upper Midwest</title>
+		<link>https://example.com/?p=4</link>
+		<pubDate>Wed, 01 May 2024 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://example.com/?p=4</guid>
+		<content:encoded><![CDATA[<p>We’re expanding operations across ND, SD, and MT, partnering with owners to build long-term performance.</p>]]></content:encoded>
+		<wp:post_id>4</wp:post_id>
+		<wp:post_date>2024-05-01 00:00:00</wp:post_date>
+		<wp:post_type>post</wp:post_type>
+		<wp:status>publish</wp:status>
+		<category domain="category" nicename="press"><![CDATA[Press]]></category>
+	</item>
+
+	<item>
+		<title>How We Build Owner Confidence from Day One</title>
+		<link>https://example.com/?p=5</link>
+		<pubDate>Thu, 20 Jun 2024 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://example.com/?p=5</guid>
+		<content:encoded><![CDATA[<p>Transparent reporting, brand compliance, and a people-first culture—our approach builds owner confidence from day one.</p>]]></content:encoded>
+		<wp:post_id>5</wp:post_id>
+		<wp:post_date>2024-06-20 00:00:00</wp:post_date>
+		<wp:post_type>post</wp:post_type>
+		<wp:status>publish</wp:status>
+		<category domain="category" nicename="insights"><![CDATA[Insights]]></category>
+	</item>
+
+	<!-- Careers (Posts in Careers category) -->
+	<item>
+		<title>General Manager – Hampton Inn – Minot, ND</title>
+		<link>https://example.com/?p=101</link>
+		<pubDate>Mon, 01 Jul 2024 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://example.com/?p=101</guid>
+		<content:encoded><![CDATA[<p>Seeking an experienced GM to lead operations, staffing, and brand compliance at Hampton Inn – Minot.</p>]]></content:encoded>
+		<wp:post_id>101</wp:post_id>
+		<wp:post_date>2024-07-01 00:00:00</wp:post_date>
+		<wp:post_type>post</wp:post_type>
+		<wp:status>publish</wp:status>
+		<category domain="category" nicename="careers"><![CDATA[Careers]]></category>
+	</item>
+
+	<item>
+		<title>Director of Sales – Regional (Upper Midwest)</title>
+		<link>https://example.com/?p=102</link>
+		<pubDate>Tue, 02 Jul 2024 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://example.com/?p=102</guid>
+		<content:encoded><![CDATA[<p>Lead regional sales strategy across portfolio, driving mix and market share.</p>]]></content:encoded>
+		<wp:post_id>102</wp:post_id>
+		<wp:post_date>2024-07-02 00:00:00</wp:post_date>
+		<wp:post_type>post</wp:post_type>
+		<wp:status>publish</wp:status>
+		<category domain="category" nicename="careers"><![CDATA[Careers]]></category>
+	</item>
+
+	<item>
+		<title>Housekeeping Supervisor – Fargo, ND</title>
+		<link>https://example.com/?p=103</link>
+		<pubDate>Wed, 03 Jul 2024 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://example.com/?p=103</guid>
+		<content:encoded><![CDATA[<p>Ensure housekeeping standards, training, and brand compliance at a downtown property.</p>]]></content:encoded>
+		<wp:post_id>103</wp:post_id>
+		<wp:post_date>2024-07-03 00:00:00</wp:post_date>
+		<wp:post_type>post</wp:post_type>
+		<wp:status>publish</wp:status>
+		<category domain="category" nicename="careers"><![CDATA[Careers]]></category>
+	</item>
+
+	<!-- Projects (CPT) -->
+	<item>
+		<title>Hampton Inn – Airport District</title>
+		<link>https://example.com/?p=201</link>
+		<pubDate>Mon, 01 Apr 2024 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://example.com/?p=201</guid>
+		<content:encoded><![CDATA[<p>Management-only engagement delivering mix optimization and SOP improvements.</p>]]></content:encoded>
+		<wp:post_id>201</wp:post_id>
+		<wp:post_date>2024-04-01 00:00:00</wp:post_date>
+		<wp:post_type>project</wp:post_type>
+		<wp:status>publish</wp:status>
+		<category domain="project_type" nicename="management-only"><![CDATA[Management Only]]></category>
+	</item>
+
+	<item>
+		<title>Holiday Inn Express – Downtown</title>
+		<link>https://example.com/?p=202</link>
+		<pubDate>Tue, 02 Apr 2024 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://example.com/?p=202</guid>
+		<content:encoded><![CDATA[<p>Renovation project focusing on guestroom upgrades and lobby reconfiguration.</p>]]></content:encoded>
+		<wp:post_id>202</wp:post_id>
+		<wp:post_date>2024-04-02 00:00:00</wp:post_date>
+		<wp:post_type>project</wp:post_type>
+		<wp:status>publish</wp:status>
+		<category domain="project_type" nicename="renovation"><![CDATA[Renovation]]></category>
+	</item>
+
+	<item>
+		<title>Courtyard by Marriott – Riverfront</title>
+		<link>https://example.com/?p=203</link>
+		<pubDate>Wed, 03 Apr 2024 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://example.com/?p=203</guid>
+		<content:encoded><![CDATA[<p>New build managed from pre-opening through launch, with emphasis on rate strategy.</p>]]></content:encoded>
+		<wp:post_id>203</wp:post_id>
+		<wp:post_date>2024-04-03 00:00:00</wp:post_date>
+		<wp:post_type>project</wp:post_type>
+		<wp:status>publish</wp:status>
+		<category domain="project_type" nicename="new-build"><![CDATA[New Build]]></category>
+	</item>
+
+	<item>
+		<title>La Quinta – Northgate</title>
+		<link>https://example.com/?p=204</link>
+		<pubDate>Thu, 04 Apr 2024 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://example.com/?p=204</guid>
+		<content:encoded><![CDATA[<p>Brand conversion delivering design refresh, procurement, training, and opening in 120 days.</p>]]></content:encoded>
+		<wp:post_id>204</wp:post_id>
+		<wp:post_date>2024-04-04 00:00:00</wp:post_date>
+		<wp:post_type>project</wp:post_type>
+		<wp:status>publish</wp:status>
+		<category domain="project_type" nicename="brand-conversion"><![CDATA[Brand Conversion]]></category>
+	</item>
+
+	<item>
+		<title>Candlewood Suites – Medical Center</title>
+		<link>https://example.com/?p=205</link>
+		<pubDate>Fri, 05 Apr 2024 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://example.com/?p=205</guid>
+		<content:encoded><![CDATA[<p>Management-only contract focusing on extended-stay performance and guest satisfaction.</p>]]></content:encoded>
+		<wp:post_id>205</wp:post_id>
+		<wp:post_date>2024-04-05 00:00:00</wp:post_date>
+		<wp:post_type>project</wp:post_type>
+		<wp:status>publish</wp:status>
+		<category domain="project_type" nicename="management-only"><![CDATA[Management Only]]></category>
+	</item>
+
+	<item>
+		<title>Fairfield Inn &amp; Suites – Westside</title>
+		<link>https://example.com/?p=206</link>
+		<pubDate>Sat, 06 Apr 2024 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://example.com/?p=206</guid>
+		<content:encoded><![CDATA[<p>Renovation led by Oasis, improving lobby flow, breakfast efficiency, and guestroom refresh.</p>]]></content:encoded>
+		<wp:post_id>206</wp:post_id>
+		<wp:post_date>2024-04-06 00:00:00</wp:post_date>
+		<wp:post_type>project</wp:post_type>
+		<wp:status>publish</wp:status>
+		<category domain="project_type" nicename="renovation"><![CDATA[Renovation]]></category>
+	</item>
+</channel>
+</rss>

@@ -1,0 +1,70 @@
+<!-- wp:template-part {"slug":"header","area":"header"} /-->
+
+<!-- wp:group {"tagName":"main","layout":{"type":"constrained"}} -->
+<main id="main-content" class="wp-block-group">
+	<!-- wp:post-title {"level":1,"fontFamily":"playfair-display"} /-->
+	<!-- wp:post-featured-image {"style":{"border":{"radius":"12px"}}} /-->
+
+	<!-- wp:columns -->
+	<div class="wp-block-columns">
+		<!-- wp:column {"width":"66.66%"} -->
+		<div class="wp-block-column" style="flex-basis:66.66%">
+			<!-- wp:post-content {"layout":{"type":"constrained"}} /-->
+		</div>
+		<!-- /wp:column -->
+		<!-- wp:column {"width":"33.33%"} -->
+		<div class="wp-block-column" style="flex-basis:33.33%">
+			<!-- wp:group {"style":{"spacing":{"blockGap":"8px"}}} -->
+			<div class="wp-block-group">
+				<!-- wp:heading {"level":3} -->
+				<h3>Project Details</h3>
+				<!-- /wp:heading -->
+				<!-- wp:post-terms {"term":"project_type"} /-->
+				<!-- wp:paragraph -->
+				<p><strong>Location:</strong> <em><!-- Location meta placeholder --></em></p>
+				<!-- /wp:paragraph -->
+				<!-- wp:paragraph -->
+				<p><strong>Brand / Flag:</strong> <em><!-- Brand meta placeholder --></em></p>
+				<!-- /wp:paragraph -->
+				<!-- wp:paragraph -->
+				<p><strong>Keys:</strong> <em><!-- Keys meta placeholder --></em></p>
+				<!-- /wp:paragraph -->
+				<!-- wp:paragraph -->
+				<p><strong>Services Provided:</strong> <em><!-- Services Provided meta placeholder --></em></p>
+				<!-- /wp:paragraph -->
+				<!-- wp:paragraph -->
+				<p><strong>Timeline:</strong> <em><!-- Timeline meta placeholder --></em></p>
+				<!-- /wp:paragraph -->
+				<!-- wp:paragraph -->
+				<p><strong>Highlights:</strong> <em><!-- Highlights meta placeholder --></em></p>
+				<!-- /wp:paragraph -->
+			</div>
+			<!-- /wp:group -->
+		</div>
+		<!-- /wp:column -->
+	</div>
+	<!-- /wp:columns -->
+
+	<!-- wp:separator {"className":"is-style-wide"} -->
+	<hr class="wp-block-separator is-style-wide"/>
+	<!-- /wp:separator -->
+
+	<!-- wp:group -->
+	<div class="wp-block-group">
+		<!-- wp:heading {"level":3} -->
+		<h3>More Projects</h3>
+		<!-- /wp:heading -->
+		<!-- wp:query {"queryId":3,"query":{"perPage":3,"pages":0,"offset":0,"postType":"project","order":"desc","orderBy":"date"},"displayLayout":{"type":"flex","columns":3}} -->
+		<div class="wp-block-query">
+			<!-- wp:post-template -->
+			<!-- wp:post-featured-image {"isLink":true,"width":"","height":"","style":{"border":{"radius":"8px"}}} /-->
+			<!-- wp:post-title {"isLink":true,"level":4} /-->
+			<!-- /wp:post-template -->
+		</div>
+		<!-- /wp:query -->
+	</div>
+	<!-- /wp:group -->
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","area":"footer"} /-->
