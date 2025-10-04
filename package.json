@@ -1,0 +1,28 @@
+{
+  "name": "oasis-hospitality-app",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Oasis Hospitality — Modern web app (React + Vite + Tailwind, Express + Prisma + Postgres) with admin panel and Docker deploy.",
+  "workspaces": [
+    "client",
+    "server",
+    "prisma",
+    "infra"
+  ],
+  "scripts": {
+    "dev": "concurrently \"yarn workspace server dev\" \"yarn workspace client dev\"",
+    "build": "yarn workspace server build && yarn workspace client build",
+    "start": "yarn workspace server start",
+    "lint": "yarn workspace server lint && yarn workspace client lint",
+    "format": "yarn workspace server format && yarn workspace client format",
+    "test": "yarn workspace server test && yarn workspace client test",
+    "test:e2e": "yarn workspace server test:e2e && yarn workspace client test:e2e",
+    "prisma:generate": "yarn workspace server prisma:generate",
+    "prisma:migrate": "yarn workspace server prisma:migrate",
+    "prisma:seed": "yarn workspace server prisma:seed"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "license": "MIT"
+}

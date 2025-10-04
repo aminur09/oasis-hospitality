@@ -1,0 +1,177 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  ADMIN
+  EDITOR
+  VIEWER
+}
+
+enum PostStatus {
+  DRAFT
+  PUBLISHED
+}
+
+enum PostCategory {
+  NEWS
+  INSIGHTS
+  PRESS
+  CASE_STUDIES
+}
+
+enum ProjectStatus {
+  DRAFT
+  PUBLISHED
+}
+
+enum ProjectType {
+  NEW_BUILD
+  RENOVATION
+  BRAND_CONVERSION
+  MANAGEMENT_ONLY
+}
+
+enum EmploymentType {
+  FULL_TIME
+  PART_TIME
+  SEASONAL
+  CONTRACT
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String?
+  name         String
+  role         Role     @default(VIEWER)
+  provider     String   @default("local") // local or google
+  googleId     String?  @unique
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  posts    Post[]    @relation("PostAuthor")
+  audits   AuditLog[]
+}
+
+model Media {
+  id        String   @id @default(cuid())
+  key       String   @unique // storage key or path
+  url       String
+  alt       String?
+  mimeType  String
+  size      Int
+  width     Int?
+  height    Int?
+  createdAt DateTime @default(now())
+  createdBy String?
+}
+
+model Settings {
+  id                Int      @id @default(1)
+  brandName         String
+  tagline           String
+  address           String
+  phone             String
+  email             String
+  primaryColor      String
+  secondaryColor    String
+  darkColor         String
+  lightColor        String
+  accentColor       String
+  siteTitleSuffix   String?
+  defaultDescription String?
+  ga4Id             String?
+  socials           Json?
+
+  @@map("settings")
+}
+
+model Post {
+  id            String       @id @default(cuid())
+  title         String
+  slug          String       @unique
+  status        PostStatus   @default(DRAFT)
+  excerpt       String?
+  body          String       // HTML content
+  featuredImage Media?       @relation(fields: [featuredImageId], references: [id])
+  featuredImageId String?
+  category      PostCategory
+  tags          String[]     // Postgres array
+  author        User         @relation("PostAuthor", fields: [authorId], references: [id])
+  authorId      String
+  publishedAt   DateTime?
+  ogTitle       String?
+  ogDescription String?
+  ogImage       Media?       @relation(fields: [ogImageId], references: [id])
+  ogImageId     String?
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+
+  audits AuditLog[]
+}
+
+model Project {
+  id              String       @id @default(cuid())
+  title           String
+  slug            String       @unique
+  status          ProjectStatus @default(DRAFT)
+  featuredImage   Media?       @relation(fields: [featuredImageId], references: [id])
+  featuredImageId String?
+  gallery         String[]     // list of media keys/urls
+  locationCity    String
+  locationState   String
+  brandFlag       String?
+  keys            Int
+  servicesProvided String[]    // e.g., Operations, Revenue, Sales & Marketing, HR/Training
+  timelineStart   DateTime?
+  timelineEnd     DateTime?
+  projectType     ProjectType
+  highlights      String[]     // bullets
+  body            String       // HTML content
+  ogTitle         String?
+  ogDescription   String?
+  ogImage         Media?       @relation(fields: [ogImageId], references: [id])
+  ogImageId       String?
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
+
+  audits AuditLog[]
+}
+
+model Career {
+  id               String       @id @default(cuid())
+  title            String
+  slug             String       @unique
+  status           PostStatus   @default(DRAFT)
+  featuredImage    Media?       @relation(fields: [featuredImageId], references: [id])
+  featuredImageId  String?
+  location         String       // city, state or Remote
+  department       String
+  employmentType   EmploymentType
+  compensationRange String?
+  applyEmail       String
+  body             String       // HTML content
+  ogTitle          String?
+  ogDescription    String?
+  createdAt        DateTime     @default(now())
+  updatedAt        DateTime     @updatedAt
+
+  audits AuditLog[]
+}
+
+model AuditLog {
+  id        String   @id @default(cuid())
+  entity    String   // Post|Project|Career|Settings|Media
+  entityId  String
+  action    String   // create|update|publish|delete|upload
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  timestamp DateTime @default(now())
+  details   Json?
+}
