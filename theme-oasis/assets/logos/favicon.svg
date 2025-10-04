@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
+  <title>Oasis Hospitality — Favicon</title>
+  <defs>
+    <linearGradient id="waveFav" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0E6E6E"/>
+      <stop offset="100%" stop-color="#4C63FF"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="48" height="48" rx="8" fill="#F7F8F8"/>
+  <path d="M4 28 C 12 18, 36 18, 44 28 C 36 38, 12 38, 4 28 Z" fill="url(#waveFav)" />
+  <circle cx="24" cy="28" r="6" fill="#C19A6B"/>
+</svg>

@@ -1,0 +1,29 @@
+<!-- wp:group {"style":{"spacing":{"padding":{"top":"30px","bottom":"30px"}}}} -->
+<div class="wp-block-group" style="padding-top:30px;padding-bottom:30px">
+	<!-- wp:heading {"textAlign":"center","fontFamily":"playfair-display"} -->
+	<h2 class="has-text-align-center">News &amp; Insights</h2>
+	<!-- /wp:heading -->
+
+	<!-- wp:query {"queryId":7,"query":{"perPage":3,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date"},"displayLayout":{"type":"flex","columns":3}} -->
+	<div class="wp-block-query">
+		<!-- wp:post-template -->
+		<!-- wp:group {"style":{"spacing":{"blockGap":"8px"},"border":{"radius":"8px"},"shadow":"var(--wp--preset--shadow--soft)"},"backgroundColor":"light"} -->
+		<div class="wp-block-group has-light-background-color has-background" style="border-radius:8px;box-shadow:0 4px 16px rgba(11,27,30,0.08)">
+			<!-- wp:post-featured-image {"isLink":true,"style":{"border":{"radius":"8px"}}} /-->
+			<!-- wp:post-title {"isLink":true,"level":3} /-->
+			<!-- wp:post-excerpt {"moreText":"Read more"} /-->
+		</div>
+		<!-- /wp:group -->
+		<!-- /wp:post-template -->
+	</div>
+	<!-- /wp:query -->
+
+	<!-- wp:buttons {"style":{"spacing":{"margin":{"top":"20px"}}}} -->
+	<div class="wp-block-buttons" style="margin-top:20px">
+		<!-- wp:button {"backgroundColor":"accent","textColor":"white"} -->
+		<div class="wp-block-button"><a class="wp-block-button__link has-white-color has-accent-background-color has-text-color has-background wp-element-button" href="/news/">Visit News</a></div>
+		<!-- /wp:button -->
+	</div>
+	<!-- /wp:buttons -->
+</div>
+<!-- /wp:group -->

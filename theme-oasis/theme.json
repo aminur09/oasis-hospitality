@@ -1,0 +1,153 @@
+{
+  "$schema": "https://schemas.wp.org/wp/6.5/theme.json",
+  "version": 2,
+  "settings": {
+    "appearanceTools": true,
+    "custom": {
+      "brand": {
+        "name": "Oasis Hospitality",
+        "tagline": "Your property’s growth starts with the right partner.",
+        "address": "900 37TH AVE SW, Minot, ND 58701",
+        "phone": "701-484-1244",
+        "email": "info@oasishospitality.net"
+      }
+    },
+    "layout": {
+      "contentSize": "1100px",
+      "wideSize": "1400px"
+    },
+    "spacing": {
+      "units": ["px", "em", "rem", "%", "vh", "vw"],
+      "padding": {
+        "customSpacingSize": true
+      }
+    },
+    "color": {
+      "palette": [
+        { "slug": "primary", "name": "Primary Teal", "color": "#0E6E6E" },
+        { "slug": "secondary", "name": "Secondary Sand", "color": "#C19A6B" },
+        { "slug": "dark", "name": "Dark", "color": "#0B1B1E" },
+        { "slug": "light", "name": "Light", "color": "#F7F8F8" },
+        { "slug": "accent", "name": "Accent Blue", "color": "#4C63FF" },
+        { "slug": "white", "name": "White", "color": "#ffffff" },
+        { "slug": "black", "name": "Black", "color": "#000000" }
+      ],
+      "gradients": [],
+      "link": true
+    },
+    "typography": {
+      "fontFamilies": [
+        {
+          "fontFamily": "\"Playfair Display\", \"Times New Roman\", serif",
+          "name": "Playfair Display",
+          "slug": "playfair-display",
+          "fontFace": [
+            {
+              "fontFamily": "Playfair Display",
+              "fontStyle": "normal",
+              "fontWeight": "600 700",
+              "src": [
+                "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap"
+              ]
+            }
+          ]
+        },
+        {
+          "fontFamily": "\"Inter\", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif",
+          "name": "Inter Variable",
+          "slug": "inter",
+          "fontFace": [
+            {
+              "fontFamily": "InterVariable",
+              "fontStyle": "normal",
+              "fontWeight": "100 900",
+              "src": [
+                "https://rsms.me/inter/inter.css"
+              ]
+            }
+          ]
+        }
+      ],
+      "fluid": true,
+      "lineHeight": {
+        "preset": {
+          "default": 1.6,
+          "heading": 1.2
+        }
+      }
+    },
+    "shadow": {
+      "presets": [
+        { "slug": "soft", "name": "Soft", "shadow": "0 4px 16px rgba(11,27,30,0.08)" },
+        { "slug": "medium", "name": "Medium", "shadow": "0 6px 24px rgba(11,27,30,0.12)" }
+      ]
+    },
+    "border": {
+      "radius": {
+        "sm": "6px",
+        "md": "10px",
+        "lg": "16px",
+        "xl": "24px"
+      }
+    },
+    "blocks": {
+      "core/button": {
+        "border": {
+          "radius": "8px"
+        },
+        "typography": {
+          "fontWeight": "600"
+        }
+      },
+      "core/navigation": {
+        "typography": {
+          "fontWeight": "600"
+        }
+      }
+    }
+  },
+  "styles": {
+    "color": {
+      "background": "var(--wp--preset--color--light)",
+      "text": "var(--wp--preset--color--dark)"
+    },
+    "typography": {
+      "fontFamily": "var(--wp--preset--font-family--inter)",
+      "fontSize": "clamp(16px, 1.2vw, 18px)"
+    },
+    "elements": {
+      "link": {
+        "color": {
+          "text": "var(--wp--preset--color--accent)"
+        }
+      },
+      "button": {
+        "color": {
+          "background": "var(--wp--preset--color--accent)",
+          "text": "var(--wp--preset--color--white)"
+        }
+      }
+    }
+  },
+  "templateParts": [
+    {
+      "name": "header",
+      "title": "Header",
+      "area": "header"
+    },
+    {
+      "name": "footer",
+      "title": "Footer",
+      "area": "footer"
+    }
+  ],
+  "templates": {
+    "front-page": {
+      "title": "Front Page"
+    }
+  },
+  "settingsOverrides": {},
+  "customTemplates": [],
+  "description": "Oasis Hospitality Block Theme with Oasis patterns and mobile-first design.",
+  "title": "Oasis Hospitality"
+}

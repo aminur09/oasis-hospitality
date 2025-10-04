@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
+  <title>Oasis Hospitality — Logo Mark</title>
+  <defs>
+    <linearGradient id="wave2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0E6E6E"/>
+      <stop offset="100%" stop-color="#4C63FF"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="60" height="60" rx="12" fill="#F7F8F8" stroke="#0E6E6E" stroke-width="2"/>
+  <path d="M8 36 C 20 22, 44 22, 56 36 C 44 50, 20 50, 8 36 Z" fill="url(#wave2)" />
+  <circle cx="32" cy="36" r="7" fill="#C19A6B"/>
+</svg>
